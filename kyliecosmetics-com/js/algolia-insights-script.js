@@ -1,0 +1,1 @@
+var e,t,n,s,a,c,i;e=window,t=document,n="script",s="https://cdn.jsdelivr.net/npm/search-insights@2.7.0",a="aa",e.AlgoliaAnalyticsObject=a,e[a]=e[a]||function(){(e[a].queue=e[a].queue||[]).push(arguments)},e[a].version=(s.match(/@([^\/]+)\/?/)||[])[1],c=t.createElement(n),i=t.getElementsByTagName(n)[0],c.async=1,c.src=s,i.parentNode.insertBefore(c,i);

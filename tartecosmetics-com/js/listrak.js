@@ -1,0 +1,2 @@
+window.setListrakRemoveCookieListener=()=>{const e=document.getElementById("CartDrawer-Checkout");e&&e.addEventListener("click",function(){document.cookie="ltk-loyalty-offer=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.tartecosmetics.com;"})},document.addEventListener("cartdrawer:constructed",window.setListrakRemoveCookieListener());
+//# sourceMappingURL=listrak.js.map

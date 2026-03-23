@@ -1,0 +1,1 @@
+.tabs{position:relative}.tabs .tab{padding-top:24px}.tablist button{cursor:pointer;background:0 0;border:2px #0000;margin:0 20px 0 0;padding:0 0 4px}.tablist button[aria-selected=true]{border-bottom:2px solid #000}.tabs .shop-all-links{position:absolute;top:0;right:20px}@media (width<=768px){.tabs .shop-all-links{top:inherit;text-align:center;position:relative;right:auto}}

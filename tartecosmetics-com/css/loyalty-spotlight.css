@@ -1,0 +1,577 @@
+/* ============================================
+   LOYALTY SPOTLIGHT - DRAWER STYLES
+   ============================================ */
+
+/* Preview button - only in theme editor */
+#loyalty-preview-btn {
+  display: none;
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 999999;
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+}
+
+#loyalty-preview-btn:hover {
+  background: #f8f8f8;
+  border-color: rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+#loyalty-preview-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   OVERLAY
+   ============================================ */
+
+.loyalty-drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.loyalty-drawer-overlay.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ============================================
+   DRAWER CONTAINER
+   ============================================ */
+
+.loyalty-drawer {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 90vh;
+  height: 90dvh;
+  max-height: 90vh;
+  max-height: 90dvh;
+  background-color: var(--loyalty-bg-color, #ffffff);
+  z-index: 9999;
+  overflow-y: auto;
+  transition: bottom 0.3s ease, visibility 0.3s ease;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 16px 16px 0 0;
+  /* Hide from iOS Safari when off-screen to prevent safe-area painting */
+  visibility: hidden;
+  /* Hide scrollbar but keep scrolling functionality */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.loyalty-drawer::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.loyalty-drawer.active {
+  bottom: 0;
+  visibility: visible;
+}
+
+.loyalty-drawer.active.no-transition {
+  transition-duration: 0s;
+}
+
+/* ============================================
+   DRAWER HEADER
+   ============================================ */
+
+.loyalty-drawer-header {
+  background-color: var(--loyalty-bg-color, #ffffff);
+  color: #1a1a1a;
+  padding: 16px 16px;
+  padding-bottom: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid rgba(229, 229, 234, 0.4);
+  box-sizing: border-box;
+  min-height: 56px;
+  /* Enable touch gestures for swipe-down-to-close */
+  touch-action: pan-y;
+  /* Improve touch responsiveness */
+  -webkit-tap-highlight-color: transparent;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.loyalty-drawer-handle {
+  display: none;
+}
+
+.loyalty-drawer-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #F2F2F2;
+  border: none;
+  border-radius: 9999px;
+  color: #1C1D21;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.loyalty-drawer-close:hover {
+  background: #E5E5EA;
+}
+
+.loyalty-drawer-title {
+  font-family: var(--loyalty-heading-font, Inter, -apple-system, sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.333;
+  margin: 0 auto;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--loyalty-heading-color, #1a1a1a);
+  letter-spacing: 0.5px;
+  max-width: 100%;
+  padding-top: 12px;
+}
+
+/* ============================================
+   GREETING SECTION
+   ============================================ */
+
+.loyalty-drawer-greeting {
+  font-family: var(--loyalty-heading-font, Inter, -apple-system, sans-serif);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 16px 24px;
+  margin: 0;
+  color: var(--loyalty-heading-color, #1a1a1a);
+}
+
+.loyalty-drawer-greeting *,
+.loyalty-drawer-greeting p {
+  font-family: inherit;
+  color: inherit;
+  margin: 0;
+}
+
+/* ============================================
+   POINTS SECTION
+   ============================================ */
+
+.loyalty-points-section {
+  background-color: var(--loyalty-bg-color, #ffffff);
+  padding: 0 24px 24px 24px;
+  border-bottom: none;
+  margin-top: 0;
+}
+
+.loyalty-points-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.loyalty-points-earned-label,
+.loyalty-points-earned-label * {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--loyalty-body-color, #1C1D21);
+  margin: 0;
+  padding: 0;
+}
+
+.loyalty-points-card {
+  position: relative;
+  background-color: transparent;
+  border: 1px solid #E5E5E5;
+  border-radius: 12px;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.loyalty-points-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--loyalty-points-bg-color, #667eea);
+  opacity: 0.16;
+  border-radius: inherit;
+  z-index: 0;
+}
+
+.loyalty-points-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.loyalty-points-value {
+  font-family: var(--loyalty-heading-font, Inter, -apple-system, sans-serif);
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 2px 0;
+  color: var(--loyalty-heading-color, #000000D9);
+}
+
+.loyalty-points-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.loyalty-points-worth {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--loyalty-body-color, #3C3C43CC);
+  margin: 0;
+}
+
+.loyalty-points-value[data-points="0"] + .loyalty-points-details .loyalty-points-worth {
+  visibility: hidden;
+}
+
+.loyalty-points-expiry {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--loyalty-body-color, #3C3C4399);
+  margin: 0;
+}
+
+/* ============================================
+   TIER SECTION
+   ============================================ */
+
+#loyalty-tier-section {
+  display: flex;
+}
+
+.loyalty-tier-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 -16px 0 -16px;
+  padding: 20px 16px 0 16px;
+  border-top: 1px solid #E5E5E5;
+}
+
+.loyalty-tier-label {
+  font-family: Inter, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: #000000;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+.loyalty-tier-benefit {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0px;
+  color: var(--loyalty-body-color, #3C3C4399);
+  margin: 0;
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ============================================
+   REWARDS SECTION
+   ============================================ */
+
+.loyalty-rewards-section {
+  padding: 0 20px 20px 20px;
+  background-color: var(--loyalty-bg-color, #ffffff);
+}
+
+.loyalty-section-title,
+.loyalty-section-title * {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+  color: var(--loyalty-body-color, #1C1D21);
+  padding: 0;
+}
+
+#loyalty-your-rewards-list,
+#loyalty-available-rewards-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+#loyalty-your-rewards-list::-webkit-scrollbar,
+#loyalty-available-rewards-list::-webkit-scrollbar {
+  display: none;
+}
+
+/* ============================================
+   REWARD CARDS
+   ============================================ */
+
+.loyalty-reward-card {
+  background: #ffffff;
+  border: 1px solid #E5E5E5;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: none;
+  min-height: 148px;
+}
+
+/* Locked reward card */
+.loyalty-reward-locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loyalty-reward-locked .loyalty-reward-title,
+.loyalty-reward-locked .loyalty-reward-points {
+  color: #8E8E93;
+}
+
+/* Restricted reward card - grayed out when restrictions apply */
+.loyalty-reward-restricted {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.loyalty-reward-restricted .loyalty-reward-title,
+.loyalty-reward-restricted .loyalty-reward-points {
+  color: #8E8E93;
+}
+
+.loyalty-reward-locked-message {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--loyalty-body-color, #3C3C43CC);
+  margin: 0;
+  margin-top: auto;
+}
+
+.loyalty-reward-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.loyalty-reward-title {
+  font-family: var(--loyalty-heading-font, Inter, -apple-system, sans-serif);
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  margin-bottom: 2px;
+  color: var(--loyalty-heading-color, #1a1a1a);
+  line-height: 1.3;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.loyalty-reward-points {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 14px;
+  color: var(--loyalty-body-color, #666);
+  margin: 0;
+  font-weight: 400;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.loyalty-reward-expiry {
+  font-size: 12px;
+  color: var(--loyalty-reward-expiry-color, #FF3B30);
+  margin: 0;
+  font-weight: 400;
+}
+
+.loyalty-reward-requirement {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  color: var(--loyalty-body-color, #3C3C4399);
+  opacity: 0.8;
+}
+
+.loyalty-reward-restriction {
+  font-family: var(--loyalty-body-font, Inter, -apple-system, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--loyalty-body-color, #3C3C4399);
+  margin: 0;
+  line-height: 16px;
+  letter-spacing: 0px;
+  text-align: left;
+  width: 100%;
+  opacity: 0.8;
+}
+
+/* ============================================
+   REWARD BUTTONS
+   ============================================ */
+
+.loyalty-reward-apply-btn,
+.loyalty-reward-redeem-btn {
+  box-sizing: border-box;
+  background: var(--loyalty-button-bg-color, #262626);
+  border: 1px solid var(--loyalty-button-bg-color, #262626);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: var(--loyalty-heading-font, Inter, -apple-system, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--loyalty-button-text-color, #FFFFFF);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: normal;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+}
+
+.loyalty-reward-remove-btn {
+  box-sizing: border-box;
+  background: var(--loyalty-button-text-color, #FFFFFF);
+  border: 1px solid var(--loyalty-button-bg-color, #262626);
+  border-radius: 6px;
+  padding: 4px 8px;
+  font-family: var(--loyalty-heading-font, Inter, -apple-system, sans-serif);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  color: var(--loyalty-button-bg-color, #262626);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: normal;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+}
+
+.loyalty-reward-apply-btn:hover,
+.loyalty-reward-redeem-btn:hover {
+  filter: brightness(0.9);
+}
+
+.loyalty-reward-remove-btn:hover {
+  filter: brightness(0.95);
+}
+
+.loyalty-reward-apply-btn:active,
+.loyalty-reward-redeem-btn:active,
+.loyalty-reward-remove-btn:active {
+  transform: scale(0.98);
+}
+
+.loyalty-reward-redeem-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.loyalty-reward-btn-loading {
+  opacity: 0.7 !important;
+  cursor: wait !important;
+}
+
+/* ============================================
+   LOADING & ERROR STATES
+   ============================================ */
+
+.loyalty-loading {
+  padding: 40px;
+  text-align: center;
+  color: #666;
+}
+
+.loyalty-loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loyalty-error {
+  padding: 40px 20px;
+  text-align: center;
+  color: #d32f2f;
+}
+
+/* ============================================
+   DESKTOP STYLES
+   ============================================ */
+
+@media (min-width: 768px) {
+  .loyalty-drawer {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 480px;
+    border-radius: 16px 16px 0 0;
+  }
+}

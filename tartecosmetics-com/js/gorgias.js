@@ -1,0 +1,2 @@
+async function openGorgiasChat(){try{if(window.initGorgiasChatPromise&&await window.initGorgiasChatPromise,window.GorgiasChat?.open)return void window.GorgiasChat.open();console.warn("GorgiasChat not ready yet.")}catch(a){console.warn("Failed to initialize GorgiasChat.",a)}}document.addEventListener("DOMContentLoaded",()=>{const a=document.getElementById("open-gorgias-chat");a&&a.addEventListener("click",async a=>{a.preventDefault(),await openGorgiasChat()})});
+//# sourceMappingURL=gorgias.js.map

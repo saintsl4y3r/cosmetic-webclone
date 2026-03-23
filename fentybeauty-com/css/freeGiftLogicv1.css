@@ -1,0 +1,2449 @@
+:root{
+    --DEFAULT-BORDER-COLOR: #9EBADC;
+    --DEFAULT-BG-COLOR: #4B556C;
+    --BLACK-COLOR: #000000;
+    --WHITE-COLOR: #FFFFFF;
+}
+
+/* reusable css classes starts */
+
+.underline{
+    text-decoration: underline !important;
+}
+.no-underline{
+    text-decoration: none;
+}
+.no-underline > .underline{
+    text-decoration: underline !important;
+}
+.font-weight-medium{
+    font-weight: 600;
+}
+
+/* reusable css classes ends */
+
+
+
+.gfgFreeGiftMsgContainer {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 1fr;
+    font-size: 14px;
+    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+    grid-gap: 10px;
+    padding: 10px 8px;
+    border-radius: 4px;
+    line-height: normal !important;
+}
+
+.gfgFreeGiftMsgIcon {
+    width: 80px;
+    height: 80px;
+
+}
+
+
+.gfgProductPageWrapperV2 {
+    margin-bottom: 5px;
+    line-height: normal;
+}
+
+.cart__ctas {
+    display: grid !important;
+}
+
+.gfgVolDiscountContainer{
+    /* display: grid;
+    grid-gap: 10px; */
+}
+
+
+.gfgTitleDiv {
+    font-weight: bolder;
+    text-align: center;
+}
+
+.gfgGridBox {
+    padding: 24px 12px;
+    margin: 5px 0px;
+}
+
+.radioButton {
+    /* position: absolute!important; */
+    width: 20px;
+    height: 20px;
+    border: 1px solid #7069bc;
+    border-radius: 50px!important;
+    left: 20px!important;
+    top: 25px!important;
+    z-index: 1!important;
+}
+
+.gfgRadioSelection {
+    display: inline-flex;
+    /* background-color: rgb(255, 255, 255); */
+    position: relative;
+    height: 20px;
+    place-self: center;
+}
+
+.gfgRadioButton {
+    margin: 0px 10px;
+    /* background-color: rgb(0, 173, 181); */
+    transform: scale(1.5);
+}
+
+.gfgCostLabel {
+    font-weight: bolder;
+    margin: 0px 5px;
+}
+
+.gfgPricesDiv {
+    display: inline-flex;
+}
+
+.gfgFreeGiftMsgRow {
+    /* border: 0.5px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gfgClaimButton {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.gfgFreeGiftMsgContainerForAccordion {
+    display: none;
+}
+.gfgFreeGiftMsgContainerForAccordion-Expanded{
+    display: block;
+    border-radius: 5px;
+    border: 2px solid var(--DEFAULT-BORDER-COLOR);
+    position: absolute;
+    z-index: 1000;
+    bottom: 75px;
+    width: 100%;
+}
+
+.gfgFreeGiftSelectDiv {
+    display: grid;
+    grid-gap: 10px;
+    /* grid-template-columns: 50px 1fr 50px; */
+    border: 2px solid var(--DEFAULT-BORDER-COLOR);
+    border-radius: 5px;
+    align-items: center;
+    padding: 10px;
+    line-height: 20px;
+    cursor: pointer;
+    min-height: 65px;
+    max-height: 70px;
+}
+
+.gfgFreeGiftSelectDiv .gfgFreeGiftMsgIcon{
+    display: grid;
+    place-items: center;
+    width: 50px;
+    height: 50px;
+}
+
+.gfgFreeGiftClaimButton {
+    color: white;
+    background-color: black;
+    border: none;
+    height: fit-content;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 15.2px;
+    line-height: 22.00px;
+    padding: 8px 16px;
+    align-self: center;
+    text-align: center;
+}
+
+.gfgFreeGiftOptionsContainerDiv {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 20px;
+    padding: 15px 10px;
+    border-radius: 3px;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: var(--WHITE-COLOR);
+    --FREEGIFT-SCROLLBAR-THUMB-BG-COLOR: #00000052;
+}
+
+
+.gfgFreeGiftOptionsContainerDiv::-webkit-scrollbar {
+    width: 6px;
+}
+
+.gfgFreeGiftOptionsContainerDiv::-webkit-scrollbar-thumb {
+    background-color: #00000052;
+}
+
+
+.gfgFreeGiftOptionsContainerDivExpanded {
+    display: grid;
+    grid-row: auto;
+    /* position: absolute;
+    z-index: 5;
+    bottom: 0px;
+    left: 0px;
+    right: 0px; */
+    background-color: white;
+    /* border-radius: 5px; */
+    /* border: black solid 1px !important; */
+    /* border: black solid 1px; */
+    /* border-bottom: none !important; */
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); */
+    overflow: auto;
+    max-height: 500px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.gfgFreeGiftMsgIconImageElement {
+    /* .css("width", "40px").css("height", "40px") */
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.gfgFreeGiftMsgIconImageElementOfItem {
+    /* .css("width", "40px").css("height", "40px") */
+    border-radius: 5px;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #0000002e;
+}
+
+.gfgFreeGiftDropDownButton {
+    /* background-color: rgba(0, 0, 0, 0); */
+    border: none;
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-color: rgba(0, 0, 0, 0);
+    justify-self: end;
+}
+
+.gfgFreeGiftDropDownButtonImageEle {
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.gfgFreeGiftDropDownButtonRotationClass {
+    transform: rotate(180deg);
+}
+
+.gfgFreeGiftMsgOptionRow {
+    display: grid;
+    /* padding: 10px; */
+    grid-template-columns: auto 8fr 1fr;
+    /* border-top: 1px solid rgba(169, 169, 169, 0.2); */
+    text-align: left;
+    /* align-items: center; */
+    grid-gap: 10PX;
+}
+
+.gfgFreeGiftMsgTitle {
+    font-weight: 700;
+    font-size: 14px;
+    text-align: left;
+    line-height: 16px;
+    color: var(--BLACK-COLOR);
+}
+
+.gfgFreeGiftMsgSubTitle {
+    font-weight: 600;
+    font-size: 12px;
+    text-align: left;
+    color: #777575;
+}
+
+.gfgFreeGiftMsgParentContainerForDropDown {
+    /* cursor: pointer; */
+    position: relative;
+}
+
+.gfgFreeGiftVariantSelect {
+    /* max-width: fit-content; */
+}
+
+.gfgFreeGiftMsgTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+}
+
+.gfgFreeGiftSelectDivExpanded {
+    /* border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; */
+}
+
+.gfgFreeGiftPill-container {
+    display: grid;
+    /* text-align: center; */
+    width: fit-content;
+    justify-content: center;
+}
+
+.gfgFreeGiftPill-segment {
+    border-radius: 5px;
+    /* padding: 1px 5px; */
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.gfgFreeGiftSingleOfferSelectDiv {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 8fr 1fr;
+    border-radius: 5px;
+    /* align-items: center; */
+    padding: 10px;
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); */
+}
+
+.gfgSingleOffergiftContainerDiv {
+    border: 2px solid var(--DEFAULT-BORDER-COLOR);
+    border-radius: 5px;
+    /* box-shadow: 0 0 4px rgba(0, 0, 0, 0.4); */
+}
+
+.gfgFreeGiftToast {
+    grid-column: 1 / span 3;
+    font-size: 12px;
+    color: red;
+}
+
+.gfgFreeGiftMsgSubTitleNoteTextColor {
+    color: #ec8816;
+}
+
+.gfgFreeGiftInvalidProductClaimButton {
+    background-color: #e5e5e5;
+    color: white;
+    pointer-events: none;
+}
+
+.gfgFreeGiftValidProductInactiveClaimButton {
+    background-color: #e5e5e5;
+    color: white;
+}
+
+.gfgFreeGiftReadyToClaimButton {
+    background-color: black;
+    cursor: pointer;
+}
+
+.gfgFreeGiftActiveFreeGiftClaimButton {
+    background-color: white;
+    border: 1px solid var(--DEFAULT-BG-COLOR);
+    color: var(--DEFAULT-BG-COLOR);
+    cursor: pointer;
+}
+
+.gfgFreeGiftAvailableToUnClaim{
+  cursor: pointer;
+}
+
+.gfgCartPageWrapperV2 {
+    margin-bottom: 10px;
+}
+
+.gfgFreeGiftScrollbar-visible {
+    grid-column: 2 / 2;
+    text-align: center;
+    max-width: fit-content;
+}
+
+.gfgCartPageWrapperV2 .gfgSingleOffergiftContainerDiv {
+    width: auto;
+    max-width: 400px;
+}
+
+
+
+.gftFreeGiftWrapper {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-gap: 15px;
+}
+
+.gfgCartPageWrapperV2 .gftFreeGiftWrapper {
+    /* display: grid;
+    justify-items: end; */
+}
+
+.gfgBulkDiscountWidgetHTML {
+    display: grid;
+    grid-gap: 10px;
+}
+
+.gfgBulkDiscountSingleWidgetHTML {
+    position: relative;
+    border: 3px solid var(--DEFAULT-BG-COLOR);
+    border-radius: 5px;
+    text-align: center;
+    background-color: var(--WHITE-COLOR);
+    text-align: center;
+    color: var(--BLACK-COLOR);
+}
+
+.gfgBulkDiscountSingleWidgetTitle{
+    padding: 2.5rem 2.5rem 2rem 2.5rem;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+.gfgBulkDiscountSingleWidgetSubTitle{
+    border-top: 2px solid var(--DEFAULT-BG-COLOR);
+    padding: 4px 0;
+    font-size: 13px;
+}
+
+.gfgBulkDiscountSingleWidgetWrapper {
+    /* display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px; */
+}
+
+
+
+.gfgFreeGiftOutOfStock{
+    /* color: red;
+    font-size: 12px;
+    font-weight: 600; */
+    /* display:none; */
+    /* background-color: tan; */
+    opacity: 0.5;
+}
+
+.gfgFreeGiftMsgSubTitleOutOfStock{
+    font-style: italic;
+}
+
+.gfgFreeGiftOutOfStock .gfgFreeGiftVariantSelect {
+    display:none;
+}
+
+/* Style for the dropdown */
+.gfgFreeGiftVariantSelect {
+    font-size: 12px;
+    /* Adjust as per your preference */
+    padding: 5px;
+    width: 60%;
+    border: 1px solid #ccc;
+    /* Adjust the color as needed */
+    border-radius: 5px;
+    /* Rounded corners */
+    appearance: none;
+    
+    /* Removes the default appearance of select on some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    /* Adjust the color as needed */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 6" fill="%23ccc" xmlns="http://www.w3.org/2000/svg"><path d="M0 1l5 5 5-5z"/></svg>');
+    /* SVG of a basic dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    /* Position the arrow to the right */
+    background-size: 10px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 20px;
+    /* min-width: -webkit-fill-available; */
+    /* Size of the arrow */
+}
+
+/* Style for the options */
+.gfgFreeGiftVariantOption {
+    font-size: 12px;
+    /* Adjust as per your preference */
+    padding: 10px;
+}
+
+/* On some browsers, you might need to style the option hover and selected states separately */
+.gfgFreeGiftVariantOption:hover {
+    background-color: #f5f5f5;
+    /* Adjust the color as needed */
+}
+
+.gfgFreeGiftVariantOption:checked,
+.gfgFreeGiftVariantOption:selected {
+    background-color: #eee;
+    /* Adjust the color as needed */
+}
+
+.gfgFreeGiftOutOfStock .gfgFreeGiftClaimButton{
+    display: none;
+}
+
+.gfgBogoWrapper:not(:empty){
+    margin-top: 20px;
+}
+
+.gfgBogoTitleContainer{
+    display: grid;
+    place-items: center;
+    background-color: #2C2A41;
+    color: white;
+    padding: 20px 0px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px 8px 0px 0px;
+}
+
+.gfgBuyProductHeader{
+    display: grid;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.gfgProductImage{
+    height: 50px;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: contain;
+}
+
+.gfgBogoFeatureCreateCapsuleContent{
+    object-fit: contain;
+    height: 80%;
+}
+
+.gfgBogoFeatureCreateCapsuleContentContainer{
+    display: grid;
+    place-items: center;
+    padding: 5px;
+}
+
+.gfgBogoDivider hr{
+    margin: 0px;
+}
+
+.gfgCustomerGetsProductTitleContainer{
+    display: grid;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.gfgBuyProductDetailSectionContainer{
+    font-size: 12px;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.gfgBuyProductCardContainer{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 20px 10px;
+    place-items: center;
+    grid-gap: 15px;
+}
+.gfgProductImageContainer{
+    display: grid;
+    /* justify-content: center; */
+    /* align-items: center; */
+    place-items: center;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.gfgBuyProductPriceContainer{
+    display: flex;
+    gap: 10px;
+}
+
+.gfgCustomerGetsProductContent{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    grid-gap: 5px;
+    font-size: 12px;
+}
+
+.gfgBuyProductPriceContainerForCustomerGets{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 5px;
+}
+
+.gfgRenderCustomerGetsProductCardPrepareUI{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 20px 10px;
+    font-size: 15px;
+    grid-gap: 15px;
+}
+
+.gfgBuyProductAddToCartButton{    
+    display: grid;
+    place-items: center;
+    width: 60px;
+    background-color: black;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+.gfgBuyProductTextPillContainer{
+    padding: 0px 18px;
+    border-radius: 500px;
+    background-color: #A3DAFF;
+    color: #134791;
+    font-size: 12px;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+    height: 18px;
+    display: grid;
+    align-self: center;
+}
+
+.gfgBogoFeatureCreateLine{
+    position: relative;
+    width: 100%;
+    height: 0.5px;
+    background-color: #CDCDCD; /* Line color */
+    margin: 15px 0;
+}
+
+.gfgBogoFeatureCreateCapsule{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0px 25px;
+    border-radius: 20px;
+    background-color: #2C2A41;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    display: grid;
+    place-items: center;
+}
+.gfgBogoContainer{
+    border: 1px solid #CDCDCD;
+    border-radius: 8px;
+}
+
+.gfgNotificationInactive{
+    display: none;
+}
+
+.gfgButtonActionsContainer{
+    padding: 20px 20px;
+    border-top: 1px solid #CDCDCD;
+    display: grid;
+    place-items: center;
+}
+
+.gfgBogoActionButton{
+    display: grid;
+    place-items: center;
+    padding: 14px;
+    width: 100%;
+    background-color: #2C2A41;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.invalidActionButton{
+    background-color: #D4D2E2;
+    pointer-events: none;
+}
+
+.gfgBuyProductPriceContainerBoxDiscountedPrice{
+    display: grid;
+    font-weight: bold;
+    font-size: 16px;
+    align-self: center;
+}
+
+.gfgBuyProductPriceContainerBox{
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.gfgBuyProductPriceContainerBoxOriginalPriceStriked{
+    text-decoration: line-through;
+    align-self: baseline; 
+    font-size: 12px;
+}
+
+.gfgBuyProductPriceContainerBoxOriginalPrice.gfgBuyProductPriceContainerBoxOriginalPriceStriked{
+    display: grid;
+    align-self: center;
+}
+
+.gfgBogoRedTextClass{
+    color: red;
+}
+
+.gfgBuyProductVariantSelect, .gfgBuyProductVariantSelectForCustomerGets{
+    margin: 0px 0px 10px 0px;
+    font-size: 12px;
+    /* Adjust as per your preference */
+    padding: 5px;
+    border: 1px solid #ccc;
+    /* Adjust the color as needed */
+    border-radius: 5px;
+    /* Rounded corners */
+    appearance: none;
+    
+    /* Removes the default appearance of select on some browsers */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    /* Adjust the color as needed */
+    background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 10 6" fill="%23ccc" xmlns="http://www.w3.org/2000/svg"><path d="M0 1l5 5 5-5z"/></svg>');
+    /* SVG of a basic dropdown arrow */
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    /* Position the arrow to the right */
+    background-size: 10px;
+    width: 75%;
+}
+
+.gfgVariantContainerHidden{
+    display: none;
+}
+
+.gfgBogoNotificationMessageContainer{
+    display: grid;
+    place-items: center;
+    position: relative;
+    z-index: 1000;
+    padding: 15px;
+    background-color: white;
+    width: 100%;
+    border-top: 0px;
+    border-radius: 8px;
+}
+
+.gfgCountDiscount{
+    .gfgRadioSelection .radioButton {
+        display: none;
+      }
+      
+      
+      .gfgRadioSelectionLabel {
+        color: #666;
+        font-weight: normal;
+        position: relative;
+        padding-left: 30px; /* Adjust as needed */
+        cursor: pointer;
+      }
+
+      .gfgRadioSelectionLabel:before {
+        content: " ";
+        display: inline-block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        border: 2px solid var(--voldisc-prod-widget-border-color,var(--DEFAULT-BORDER-COLOR));
+        background-color: transparent;
+    }
+
+    .gfgGridBoxSelected .gfgRadioSelectionLabel:before {
+        border: 2px solid var(--voldisc-prod-widget-selected-radio-box-border-color,var(--DEFAULT-BG-COLOR));
+    }
+      
+      .gfgRadioSelection .radioButton:checked + .gfgRadioSelectionLabel:after {
+        border-radius: 11px;
+        width: 12px;
+        height: 12px;
+        position: absolute;
+        top: 5px;
+        left: 5px; /* Adjusted this to center the circle */
+        content: " ";
+        display: block;
+        background-color: var(--voldisc-prod-widget-selected-radio-box-border-color,var(--DEFAULT-BG-COLOR));
+      }
+
+    
+    .gfgGridBox {
+        display: grid;
+        position: relative;
+        /* padding: 0 6px; */
+        border: 1px solid var(--voldisc-prod-widget-border-color,var(--DEFAULT-BORDER-COLOR));
+
+        margin: 10px 0 0;
+        width: 100%;
+        grid-template-columns: 30px 1fr;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    .gfgGridBoxSelected {
+        border: 2px solid var(--voldisc-prod-widget-selected-radio-box-border-color,var(--DEFAULT-BG-COLOR)) !important;
+    }
+    
+    .gfgHide{
+        display: none;
+    }
+    
+    .gfgCompareAtPrice {
+        text-decoration: line-through;
+        color: #999;
+        align-self: center;
+        font-size: 12px;
+    }
+    
+    .gfgPricesDiv {
+        display: grid;
+        justify-content: end;   
+        grid-template-columns: auto auto;
+    }
+    
+    
+    .gfgCostLabel {
+        font-weight: bolder;
+        margin: 0px 5px;
+        align-self: center  ;
+        font-size: 16px;
+    }
+    
+    .gfgLabelAndPriceDiv {
+        padding-left: 5px;
+        display: grid;
+        grid-template-columns: 1.5fr 1fr;
+        grid-gap: 10px;
+    }
+    
+    
+    @media only screen and (max-width: 600px) {
+        .gfgFreeGiftClaimButton {
+            grid-column: 2 / 2;
+            text-align: center;
+        }
+    
+        .gfgSingleOffergiftContainerDiv {
+            width: 100%;
+        }
+        .gfgGridBox {
+            display: grid;
+            position: relative;
+            /* padding: 0 6px; */
+            margin: 10px 0 0;
+            /* grid-gap:10px; */
+            width: 100%;
+            grid-template-columns: 30px 1fr;
+        }
+        .gfgPricesDiv {
+            grid-template-columns: 1fr;
+            grid-template-columns: min-content min-content;
+            grid-gap: 10px;
+            justify-content: start;
+        }
+        .gfgGridBox{
+            padding: 10px;
+        }
+        .gfgCompareAtPrice { order: 2; }
+        .gfgCostLabel { 
+            order: 1;
+            margin: 0px;
+         }
+         .gfgLabelAndPriceDiv {
+            /* padding-left: 30px; */
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        
+    }
+}
+
+ .gfgDisabled{
+    opacity: 0.5;
+    pointer-events: none;
+ }
+
+ .gfgLoadingSpinner{
+    pointer-events: none;
+    opacity: 0.5;
+ }
+
+ .gfgVolDiscountWrapper:not(:empty) {
+    margin-top: 10px;
+}
+
+/* .gfgPoweredByLabelBlock{
+    display: grid;
+    background: #4d4b4b;
+    width: max-content;
+    justify-self: end;
+}
+.gfgPoweredAnchorTag{
+    color: white;
+    text-decoration: none;
+} */
+
+.gfgCartPageWrapperV2  .gfgFreeGiftSingleOfferSelectDiv {
+    max-width:100% !important;
+ }
+
+ .prevNextButtonContainer{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #dedede;
+    padding: 15px 10px;
+    background-color: #ffffff;
+ }
+
+ .prevButton, .nextButton{
+    /* padding: 10px 0; */
+    border-radius: 5px;
+    color: black;
+    background-color: #dedede;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    /* font-size: 1.5rem; */
+    /* width: 105px; */
+    font-size: 0;
+    padding: 2px;
+    width: unset;
+ }
+
+ .prevButton .chevronIcon{
+    display: flex;
+ }
+
+ .nextButton .chevronIcon{
+    transform: rotate(180deg);
+    display: flex;
+ }
+
+ .prevButton:disabled, .nextButton:disabled{
+    opacity: 0.5;
+    pointer-events: none;
+ }
+
+
+
+/* starts ------> volume discount product page widget simple ribbon badge(template 1 of Most popular tag feature)  <------ */
+ 
+.gfgTemplateSimpleRibbonBadge{
+    position: absolute;
+    top: -7px;
+    right: 12px;
+}
+.gfgSimpleRibbonBadge{
+    color: var(--WHITE-COLOR);
+    font-style: normal;
+    white-space: nowrap;
+    text-align: right;
+    font-weight: 600;
+    font-size: 11px;
+    line-height: normal;
+    padding: 8px 12px;
+    background-color: var(--DEFAULT-BG-COLOR);
+    border-radius: 0px 0px 7px 7px;
+}
+
+.gfgSimpleRibbonBadge::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 3.5px;
+    border-radius: 8px 0 0 0;
+    border-color: #312f2fde;
+    top: 0px;
+    left: -6px;
+    filter: brightness(0.8);
+}
+.gfgSimpleRibbonBadge::after{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 3.5px;
+    border-radius: 0 8px  0 0;
+    border-color: #312f2fde;
+    top: 0px;
+    right: -6.2px;
+    filter: brightness(0.8);
+}
+
+/* END ------> volume discount product page widget simple ribbon badge(template 1 of Most popular tag feature)  <------ END */
+
+.gfgVolDiscountNoteDiv{
+    color: #000000;
+    font-weight: normal;
+    font-size: 1rem;
+    padding-bottom: 2px;
+}
+
+
+.gfgFixedTotalDiscount .gfgRadioSelection{
+    display: none;
+}
+
+
+.gfgShippingDiscountWidgetParentContainer{
+    display:grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    column-gap: 5px;
+    align-items: center;
+    margin:16px 0;
+    border-radius: 5px;
+    border: 2px solid #000;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+    padding:12px;
+}
+
+.gfgShippingDiscountWidgetLeftInnerContainer{
+    height: 64px;
+    width: 64px;
+}
+
+.gfgShippingDiscountWidgetLeftInnerContainer .gfgShippingDiscountWidgetIconImage{
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+} 
+
+.gfgShippingDiscountWidgetRightInnerContainer{
+    display:grid;
+    row-gap: 10px;
+}
+
+.gfgShippingDiscountWidgetRightInnerContainer .gfgShippingDiscountWidgetText{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: normal;
+    text-align: left;
+}
+
+.gfgShippingDiscountWidgetRightInnerContainer .gfgShippingDiscountBar{
+    width: 100%;
+    height: 8px;
+    background-color: #e2e2e2;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gfgShippingDiscountWidgetRightInnerContainer .gfgShippingDiscountInnerBarFillProgress{
+    display: block;
+    width: 50%;
+    height:100%;
+    background-color: #D10000;
+    border-radius: 12px;
+} 
+
+.gfgShippingDiscountWidgetRightInnerContainer .gfgShippingDiscountInnerBarFillSuccess{
+    display: block;
+    width: 50%;
+    height:100%;
+    background-color: #008000;
+    border-radius: 12px;
+} 
+
+
+.gfgFreeGiftWidgetTitleBar{
+    width: 100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    background-color: var(--DEFAULT-BG-COLOR);
+    padding: 12px 0;
+    color: white;
+    text-align: center;
+}
+
+.gfgFreeGiftMsgPillBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border-radius: 20px;
+    padding: 0.2rem 1rem;
+    background-color: var(--DEFAULT-BG-COLOR);
+    width: fit-content;
+    height: fit-content;
+    padding:5px 8px;
+}
+
+.gfgFreeGiftPillIcon{
+    width: 10px;
+    height: 10px;
+    object-fit: contain;
+}
+
+
+
+.titleDiv{
+    background-color: var(--DEFAULT-BG-COLOR);
+    color: #ffffff;
+    padding: 11px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+}
+
+.gfgBulkDiscountSingleWidgetPill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    position: absolute;
+    top: -10px;
+    left: 25px;
+    border-radius: 20px;
+    padding: 0.3rem 1rem;
+    background-color: var(--DEFAULT-BG-COLOR);
+    width: fit-content;
+    height: fit-content;
+    color: var(--WHITE-COLOR);
+    font-weight: bold;
+    font-size: 1rem;
+}
+.gfgBulkDiscountSingleWidgetPillIcon{
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+
+.gfgBogoAdditionalNote{
+    font-size: 14px;
+    color: #3c3c3c;
+    font-weight: 500;
+    padding-top: 8px;
+}
+
+/*******************************************SHIPPING DISCOUNT -> start ****************************************/
+.gfgShippingDiscountParentContainer {
+    width: 100%;
+    border-radius: 8px;
+    border: 1.8px solid #9ebadc;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .gfgShippingDiscountTopSectionContainer {
+    width: 100%;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4b556c;
+    .titleIconWrapper {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  
+    .titleBarTextContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      overflow: hidden;
+      .titleBarMainHeading {
+        text-align: left;
+        font-size: 18px;
+        line-height: normal;
+        color: #ffffff;
+        font-weight: bold;
+        max-width: 350px;
+        word-wrap: break-word;
+      }
+  
+      .titleBarSubHeading {
+        text-align: left;
+        font-size: 13px;
+        line-height: normal;
+        color: #ffffff;
+        font-weight: normal;
+        max-width: 350px;
+        word-wrap: break-word;
+      }
+    }
+  }
+  
+  .gfgShippingDiscountBottomSectionContainer {
+    height: auto;
+    padding: 10px 16px;
+  
+    .gfgDynamicProgressBarAndTextMessageWrapper {
+      padding: 5px 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .gfgDynamicProgressBarWrapper {
+        display: block;
+        position: relative;
+        width: 100%;
+        position: relative;
+        height: 12px;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+        .gfgDynamicProgressBarIndicator {
+          position: absolute;
+          display: grid;
+          place-items: center;
+          top: -37%;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          box-shadow: 0px 0px 23.283px 0px rgba(0, 0, 0, 0.25), 0px 1.963px 1.963px 0px rgba(0, 0, 0, 0.1),
+            0px 1.963px 2.944px 0px rgba(255, 255, 255, 0.25);
+  
+          .gfgDynamicProgressBarInnerIndicator {
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+          }
+        }
+        .gfgDynamicProgressBar {
+          display: block;
+          height:100%;
+          /* position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0; */
+          border-radius: 12px;
+          transition: all 1.5s ease-in-out;
+        }
+      }
+  
+      .gfgDynamicTextMessageAndIconWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+  
+        .gfgDynamicProgressBarTextMessage {
+          text-align: left;
+          line-height: normal;
+        }
+        .gfgDynamicProgressBarIconWrapper {
+          width: 22px;
+          height: 22px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  
+    .gfgVerticalStepperProgressBarContainer {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 18px;
+      .gfgVerticalProgressBar {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 6px;
+        left: 13px;
+        /* transform: translate(149%, 4%); */
+        /* transform-origin: center; */
+        background-color: #9ebadc;
+        z-index: 1;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      }
+  
+      .gfgVerticalStepperProgressBarItem {
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        align-items: center;
+        column-gap: 5px;
+        .gfgVerticalStepperProgressBarIconWrapper {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          overflow: hidden;
+          background-color: #ffffff;
+          border: 2px solid #b9b9b9;
+          z-index: 2;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          .gfgVerticalStepperProgressBarIcon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+  
+        .gfgVerticalStepperProgressBarText {
+          font-size: 14px;
+          line-height: normal;
+          text-align: left;
+          color: #000000;
+          font-weight: 600;
+        }
+      }
+    }
+  
+    .gfgHorizontalStepperProgressBarContainer {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+  
+      .gfgHorizontalProgressBar {
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+        transform: translateY(12px);
+        transform-origin: center;
+        background-color: #9ebadc;
+        z-index: 1;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+      }
+  
+      .gfgHorizontalStepperProgressBarItem {
+        display: grid;
+        row-gap: 8px;
+        justify-items: center;
+        .gfgHorizontalStepperProgressBarIconWrapper {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+          background-color: #ffffff;
+          border: 2px solid #b9b9b9;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+          img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            object-fit: contain;
+          }
+        }
+  
+        .gfgHorizontalStepperProgressBarText {
+          max-width: 120px;
+          font-size: 14px;
+          line-height: normal;
+          text-align: center;
+          color: #000000;
+          font-weight: 600;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  
+/*******************************************SHIPPING DISCOUNT -> end ****************************************/
+
+/*******************************************UNIFIED WIDGET -> start ****************************************/
+.gfgUnifiedWgtParentContainer {
+    width: 100%;
+    border-radius: 8px;
+    border: 1.8px solid #9ebadc;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .gfgUnfiedWgtTopSectionContainer {
+    width: 100%;
+    padding: 16px 16px 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* background-color: #4b556c; */
+  
+    .titleIconWrapper {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  
+    .titleBarTextContainer {
+      overflow: hidden;
+      width: 100%;
+      display:grid;
+      place-items: center;
+      .titleBarMainHeading {
+        text-align: center;
+        font-size: 16px;
+        color: #ffffff;
+        font-weight: bold;
+        line-height: normal;
+      }
+    }
+  }
+  .gfgUnifiedWgtBottomSectionContainer {
+    height: auto;
+    padding: 10px 16px 16px 16px;
+  
+    .gfgUnifiedWgtProgressBarIconTextMessageWrapper {
+      padding: 5px 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+  
+      .gfgDynamicProgressBarWrapper {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 12px;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+  
+        .gfgDynamicProgressBarIndicator {
+          position: absolute;
+          display: grid;
+          place-items: center;
+          top: -37%;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          box-shadow: 0px 0px 23.283px 0px rgba(0, 0, 0, 0.25), 0px 1.963px 1.963px 0px rgba(0, 0, 0, 0.1),
+            0px 1.963px 2.944px 0px rgba(255, 255, 255, 0.25);
+  
+          .gfgDynamicProgressBarInnerIndicator {
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+          }
+        }
+  
+        .gfgDynamicProgressBar {
+          display: block;
+          height: 100%;
+          border-radius: 12px;
+          transition: all 1.5s ease-in-out;
+        }
+      }
+  
+      .gfgDynamicTextMessageAndIconWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+  
+        .gfgDynamicProgressBarTextMessage {
+          text-align: left;
+          line-height: normal;
+        }
+        .gfgDynamicProgressBarIconWrapper {
+          width: 22px;
+          height: 22px;
+          overflow: hidden;
+  
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  
+    .gfgVerticalStepperProgressBarContainer {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 18px;
+  
+      .gfgVerticalProgressBar {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 6px;
+        left: 13px;
+        background-color: #9ebadc;
+        z-index: 1;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      }
+  
+      .gfgVerticalStepperProgressBarItem {
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        align-items: center;
+        column-gap: 5px;
+  
+        .gfgVerticalStepperProgressBarIconWrapper {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          overflow: hidden;
+          background-color: #ffffff;
+          border: 2px solid #b9b9b9;
+          z-index: 2;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  
+          .gfgVerticalStepperProgressBarIcon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+  
+        .gfgVerticalStepperProgressBarText {
+          font-size: 14px;
+          line-height: normal;
+          text-align: left;
+          color: #000000;
+          font-weight: 600;
+        }
+      }
+    }
+  
+    .gfgHorizontalStepperProgressBarContainer {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      
+      .gfgHorizontalProgressBar{
+        /* width: 33.3333%;
+        background-color: green; */
+        display: block;
+        position: absolute;
+        height: 10px;
+        /* width: 100%; */
+        margin: 0 auto;
+        border-radius: 5px;
+        z-index: 1;
+        display: block;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+      }
+  
+      .gfgHorizontalStepperProgressBarItem {
+        display: grid;
+        row-gap: 8px;
+        justify-items: center;
+  
+        .gfgHorizontalStepperProgressBarIconWrapper, .gfgHorizontalStepperProgressBarIcon {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+          background-color: #dbdbdb;
+          /* border: 2px solid #b9b9b9; */
+          /* box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px; */
+  
+          .gfgHorizontalStepperProgressBarIcon {
+            background-color: unset;
+            border-radius: 50%;
+            display: grid;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+          }
+        }
+  
+        .gfgHorizontalStepperProgressBarText {
+          max-width: 65px;
+          font-size: 12px;
+          line-height: normal;
+          text-align: center;
+          color: #000000;
+          font-weight: 600;
+          word-wrap: break-word;
+        }
+      }
+    }
+  
+    .gfgHorizontalStepperProgressBarStickParentContainer{
+      position: absolute;
+      width: 100%;
+      transform: translateY(11px);
+    }
+    .gfgHorizontalStepperProgressBarStickWrapper{
+            overflow: hidden;
+            width: 100%;
+            background-color: grey;
+            position: absolute;
+            height: 10px;
+            border-radius: 5px;
+            display: block;
+            position: absolute;
+            margin: 0 auto;
+            border-radius: 5px;
+            z-index: 1;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+    }
+  }
+  /*******************************************UNIFIED WIDGET -> end ****************************************/
+  /*******************************************CUSTOM FUNCTION BUY X GET Y WIDGET -> START **************************************/
+
+    .gfgRowFlexContainer {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .gfgColFlexContainer {
+        display: flex;
+        height: 100%;
+        flex-grow: 0;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .gfgBuyXGetYCustomDiscountAccordionAction {
+        cursor: pointer;
+        outline: 0.8px solid var(--outline-color, #3c3c3c);
+        border-radius: 5px;
+        padding: 8px 16px;
+        box-sizing: border-box;
+        height: 5rem;
+
+    }
+    .gfgBuyXGetYCustomDiscountAccordionBodyContainer {
+        max-height: 0px;
+        width: 100%;
+        overflow: hidden;
+        transition: all 0.2s ease;
+        border-radius: 5px;
+        outline: none;
+        position: relative;
+    }
+    .gfgBuyXGetYCustomDiscountAccordionBody{
+        /* margin: 13px; */
+        transition: transform 0.2s ease-out;
+    }
+    .gfgBuyXGetYCustomDiscountScrollButton {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        place-items: center;
+        border-radius: 5px;
+        transform: translateY(-50%);
+        z-index: 2;
+        background-color: rgba(0, 0, 0, .1);
+        height: 25px;
+        width: 25px;
+        &.left {
+            left: 5px;
+            svg {
+                transform: rotate(-90deg);
+            }
+        }
+        &.right {
+            right: 5px;
+            svg {
+                transform: rotate(90deg);
+            }
+        }
+        svg {
+            width: 25px;
+            height: 25px;
+        }
+    }
+    .gfgBuyXGetYCustomDiscountAccordionBodyContainer.accordion-state-open {
+        max-height: 305px;
+        margin: 5px 0px;
+        outline: 0.8px solid var(--outline-color, #3c3c3c);
+    }
+    /* .gfgBuyXGetYCustomDiscountAccordionAction:hover {
+        outline: 0.8px solid #3c3c3c;
+    } */
+    .gfgBuyXGetYCustomDiscountParentContainer {
+        margin-top: 0.5rem;
+        background-color: transparent;
+    }
+    .gfgCartPageWrapperV2 .gfgBuyXGetYCustomDiscountParentContainer_CART_PAGE {
+        max-width: 36rem;
+    }
+    .gfgCartPageWrapperV2 .gfgBuyXGetYCustomDiscountParentContainer_SIDE_CART {
+        max-width: 37rem;
+    }
+    .gfgBuyXGetYAccordionIcon {
+        height: 30px;
+        width: 30px;
+        object-fit: contain;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gfgAccordionControl{
+        transition: rotate 0.2s ease-out;
+        rotate: 180deg;
+    }
+    .gfgAccordionControl.accordion-state-open {
+        rotate: 0deg;
+    }
+    .gfgBuyXGetYAccordionTitle{
+        font-weight: 600;
+        font-size: 16px;
+    }
+    .gfgAccordionChild {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .gfgBuyXGetYProductListWrapper {
+        display: flex;
+        flex-direction: row;
+        overflow-x: auto;
+        gap: 15px;
+        scrollbar-width: thin;
+        scroll-behavior: smooth;
+        padding: 15px;
+    }
+    .gfgBuyXGetYProductListWrapper.gfgTwoColumnGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .gfgBuyXGetYProductCardWrapper {
+            width: 100%;
+        }
+
+        .gfgBuyXGetYProductImage {
+            height: 145px;
+            object-fit: cover;
+        }
+    }
+    .gfgBuyXGetYProductListWrapper.gfgThreeColumnGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        .gfgBuyXGetYProductCardWrapper {
+            width: 100%;
+        }
+        
+        .gfgBuyXGetYProductImage {
+            height: 145px;
+            object-fit: cover;
+        }
+    }
+    .gfgBuyXGetYProductDiscountedPrice {
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .gfgBuyXGetYProductOriginalPrice {
+        text-decoration: line-through;
+        font-size: 11px;
+        opacity: 0.5;
+    }
+    .gfgBuyXGetYProductTitle{
+        margin: 0;
+        text-align: start;
+        font-size: 15px;
+        height: 36px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-clamp: 2;
+        -webkit-line-clamp: 2;
+        line-height: 1.2;
+        max-height: calc(1.2em * 2);
+    }
+    .gfgBuyXGetYProductImage{
+        border: 2px solid rgb(0 0 0 / 8%);
+        width: 100%;
+        flex-shrink: 0;
+        aspect-ratio: 1;
+        object-fit: contain;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.1);
+    }
+    .gfgBuyXGetYProductBtn {
+        width: 100%;
+        border: none;
+        font-weight: 600;
+        padding: 10px 0px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 15px;
+        cursor: pointer;
+    }
+    .gfgBuyXGetYProductBtn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .gfgBuyXGetYProductBtn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    .gfgBuyXGetYProductCardWrapper{
+        display: flex;
+        flex-shrink: 0;
+        flex-grow: 0;
+        gap: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 135px;
+
+        .gfgBuyXGetYProductBtn:active {
+            scale: 0.98;
+        }
+
+        .gfgColFlexContainer {
+            align-items: start;
+            height: 65px;
+        }
+
+        .gfgRowFlexContainer {
+            height: fit-content;
+        }
+
+        .gfgProductCardPriceContainer{
+            height: 15px;
+        }
+    }
+    .gfgBuyXGetYCustomDiscountAccordionBody.variant-selector-open {
+        transform: translateY(-310px);
+
+        .gfgBuyXGetYCustomDiscountScrollButton {
+            display: none;
+        }
+    }
+
+    .gfgBuyXGetYCustomDiscountAccordionBody.variant-selector-open .gfgBuyXGetYProductListWrapper{
+        scrollbar-width: none;
+    }
+    .gfgBuyXGetYVariantSelector {
+        height: 295px;
+        padding: 15px;
+        gap: 8px;
+
+        .gfgBuyXGetYVariantSelectorProductImage{
+            border: 2px solid rgb(0 0 0 / 8%);
+            width: 125px;
+            height: 125px;
+            flex-shrink: 0;
+            aspect-ratio: 1;
+            object-fit: contain;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 5px -2px rgba(0,0,0,0.1);
+        }
+        .gfgBuyXGeyYProductDetailsBodyWrapper {
+            align-self: flex-start;
+        }
+        .gfgBuyXGetYProductDetailsContainer{
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .gfgBuyXGetYProductTitle{
+            font-size: 18px;
+            height: unset;
+        }
+
+        .gfgBuyXGetYProductOriginalPrice {
+            font-size: 15px;
+        }
+        .gfgBuyXGetYProductDiscountedPrice{
+            font-size: 20px;
+        }
+    }
+    .gfgBuyXGetYSingleProductCard.gfgBuyXGetYVariantSelector {
+        height: unset;
+    }
+    .gfgBuyXGetYVariantSelectorBackBtn {
+        align-self: start;
+        rotate: -90deg;
+        cursor: pointer;
+        height: 32px;
+        width: 32px;
+        margin-top: 20px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .gfgBuyXGetYVariantSelectorBackBtn:hover {
+        background-color: rgba(0, 0, 0, .05);
+    }
+
+    .gfgBuyXGetYVariantSelectorSelectInputWrapper {
+        width: 100%;
+        position: relative;
+        display: flex;
+    }
+    .gfgBuyXGetYVariantSelectorSelectInputWrapper select {
+        appearance: none;
+        padding-right: 30px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #ECECEC;
+        text-overflow: ellipsis;
+        font-size: 16px;
+        font-weight: 500;
+    }
+    .gfgBuyXGetYVariantSelectorSelectInputWrapper select:focus-visible {
+        box-shadow: none;
+    }
+    .gfgBuyXGetYVariantSelectorSelectInputWrapper select:focus{
+        outline: 0.5px solid #979797;
+    }
+    /* .gfgBuyXGetYVariantSelectorSelectInputWrapper::after {
+        content: url(../images/CaretDown.svg);
+        font-size: 2rem; 
+        top: 8px;
+        right: 10px;
+        position: absolute;
+    } */
+    .gfgBuyXGetYVariantSelectorSelectInputIcon {
+        content: url(../images/CaretDown.svg);
+        font-size: 2rem; 
+        transform: translateY(45%);
+        right: 10px;
+        position: absolute;
+    }
+    .gfgBuyXGetYVariantSelectorSelectInputContainer {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 5px;
+    }
+    .gfgBuyXGetYVariantSelectorSelectInputLabel {
+        font-size: 15px;
+        color: #3c3c3c;
+    }
+    .gfgBuyXGetYVariantSelectorSelectInput {
+        padding: 10px;
+        width: 100%;
+        position: relative;
+    }
+    .gfgLoader {
+        width: 14px;
+        height: 14px;
+        border: 2.5px solid var(--gfg-loader-color);
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block !important;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+    
+  /******************************************* CUSTOM FUNCTION BUY X GET Y WIDGET -> END ****************************************/
+
+
+  /*******************************************  SHIPPING DISCOUNT WIDGET -> START ****************************************/
+
+  .gfgShippingDiscountParentContainer {
+    width: 100%;
+    border-radius: 8px;
+    border: 1.8px solid #9ebadc;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .gfgShippingDiscountTopSectionContainer {
+    width: 100%;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4b556c;
+    .titleIconWrapper {
+      width: 50px;
+      height: 50px;
+      border-radius: 6px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  
+    .titleBarTextContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 8px;
+      overflow: hidden;
+      .titleBarMainHeading {
+        text-align: left;
+        font-size: 18px;
+        line-height: normal;
+        color: #ffffff;
+        font-weight: bold;
+        max-width: 350px;
+        word-wrap: break-word;
+      }
+  
+      .titleBarSubHeading {
+        text-align: left;
+        font-size: 13px;
+        line-height: normal;
+        color: #ffffff;
+        font-weight: normal;
+        max-width: 350px;
+        word-wrap: break-word;
+      }
+    }
+  }
+  
+  .gfgShippingDiscountBottomSectionContainer {
+    height: auto;
+    padding: 10px 16px;
+  
+    .gfgDynamicProgressBarAndTextMessageWrapper {
+      padding: 5px 0px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      .gfgDynamicProgressBarWrapper {
+        display: block;
+        position: relative;
+        width: 100%;
+        position: relative;
+        height: 12px;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+        .gfgDynamicProgressBarIndicator {
+          position: absolute;
+          display: grid;
+          place-items: center;
+          top: -37%;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background-color: #ffffff;
+          box-shadow: 0px 0px 23.283px 0px rgba(0, 0, 0, 0.25), 0px 1.963px 1.963px 0px rgba(0, 0, 0, 0.1),
+            0px 1.963px 2.944px 0px rgba(255, 255, 255, 0.25);
+  
+          .gfgDynamicProgressBarInnerIndicator {
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+          }
+        }
+        .gfgDynamicProgressBar {
+          display: block;
+          height:100%;
+          /* position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0; */
+          border-radius: 12px;
+          transition: all 1.5s ease-in-out;
+        }
+      }
+  
+      .gfgDynamicTextMessageAndIconWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+  
+        .gfgDynamicProgressBarTextMessage {
+          text-align: left;
+          line-height: normal;
+        }
+        .gfgDynamicProgressBarIconWrapper {
+          width: 22px;
+          height: 22px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  
+    .gfgVerticalStepperProgressBarContainer {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      gap: 18px;
+      .gfgVerticalProgressBar {
+        display: block;
+        position: absolute;
+        height: 100%;
+        width: 6px;
+        left: 13px;
+        /* transform: translate(149%, 4%); */
+        /* transform-origin: center; */
+        background-color: #9ebadc;
+        z-index: 1;
+        border-radius: 12px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+      }
+  
+      .gfgVerticalStepperProgressBarItem {
+        display: grid;
+        grid-template-columns: 32px 1fr;
+        align-items: center;
+        column-gap: 5px;
+        .gfgVerticalStepperProgressBarIconWrapper {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          overflow: hidden;
+          background-color: #ffffff;
+          border: 2px solid #b9b9b9;
+          z-index: 2;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+          .gfgVerticalStepperProgressBarIcon {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+  
+        .gfgVerticalStepperProgressBarText {
+          font-size: 14px;
+          line-height: normal;
+          text-align: left;
+          color: #000000;
+          font-weight: 600;
+        }
+      }
+    }
+  
+    .gfgHorizontalStepperProgressBarContainer {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-around;
+  
+      .gfgHorizontalProgressBar {
+        display: block;
+        position: absolute;
+        height: 6px;
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+        transform: translateY(12px);
+        transform-origin: center;
+        background-color: #9ebadc;
+        z-index: 1;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+      }
+  
+      .gfgHorizontalStepperProgressBarItem {
+        display: grid;
+        row-gap: 8px;
+        justify-items: center;
+        .gfgHorizontalStepperProgressBarIconWrapper {
+          width: 32px;
+          height: 32px;
+          border-radius: 50%;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 2;
+          background-color: #ffffff;
+          border: 2px solid #b9b9b9;
+          box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+          img {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border-radius: 50%;
+            object-fit: contain;
+          }
+        }
+  
+        .gfgHorizontalStepperProgressBarText {
+          max-width: 120px;
+          font-size: 14px;
+          line-height: normal;
+          text-align: center;
+          color: #000000;
+          font-weight: 600;
+          word-wrap: break-word;
+        }
+      }
+    }
+  }
+  
+  /*******************************************  SHIPPING DISCOUNT WIDGET -> END ****************************************/
+
+
+
+
+/*xxxxxxxxxxxxxxxxxxxxxx Add only app specific css sections below this line xxxxxxxxxxxxxxxxxxxxxxxxxx*/
+
+/*******************************************  PROGRESS BAR WIDGET -> START ****************************************/
+/* Progress Bar Widget Styles for Consolidated Custom Discount */
+
+.gfgCCDProgressBarWidget {
+  margin: 16px 0;
+  font-family: inherit;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gfgCCDProgressBarWidget div:empty {
+  display: unset;
+} 
+
+.gfgProgressBarHeading {
+  text-align: center;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.gfgProgressBarSegmentsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 3px;
+  text-wrap: balance;
+}
+
+.gfgCCDProgressBarSegmentItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 8px;
+}
+
+.gfgCCDProgressBarSegmentHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gfgCCDProgressBarSegmentTitle {
+  line-height: 1.4;
+  text-align: center;
+  width: 100%;
+}
+
+.gfgCCDProgressBarWrapper {
+  width: 100%;
+  background: #e0e0e0;
+  height: 5px;
+  overflow: hidden;
+}
+
+.gfgCCDProgressBarWrapper.first {
+  border-radius: 10px 0 0 10px;
+}
+
+.gfgCCDProgressBarWrapper.last {
+  border-radius: 0 10px 10px 0;
+}
+
+.gfgCCDProgressBarFill {
+  display: block !important; 
+  height: 100%;
+  transition: width 0.3s ease;
+}
+
+.gfgCCDProgressBarCheckmark {
+  --checkmark-width: 16px;
+  background-color: #ffffff;
+  position: absolute;
+  z-index: 1;
+  top: calc(-0.25 * var(--checkmark-width) - 1px);
+  right: calc(-0.5 * var(--checkmark-width));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--checkmark-width);
+  height: var(--checkmark-width);
+  border-radius: 50%;
+}
+
+.gfgCCDProgressBarCheckmark svg {
+  path {
+    fill: var(--bar-fill-color);
+  }
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gfgCCDProgressBarSegmentLink {
+  font-size: 12px;
+  text-decoration: underline;
+  align-self: flex-end;
+}
+
+/* Single Segment Progress Bar */
+.gfgCCDProgressBarSingleSegmentContainer {
+  padding: 5px 0px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gfgCCDDynamicProgressBarIndicator {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  top: -37%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 23.283px 0px rgba(0, 0, 0, 0.25), 0px 1.963px 1.963px 0px rgba(0, 0, 0, 0.1),
+    0px 1.963px 2.944px 0px rgba(255, 255, 255, 0.25);
+}
+
+.gfgDynamicProgressBar {
+  display: block;
+  height: 100%;
+  border-radius: 12px;
+  transition: all 1.5s ease-in-out;
+}
+
+.gfgCCDSingleProgressBarIndicator {
+  position: absolute;
+  transition: all 0.3s ease;
+  top: -2px;
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.gfgDynamicTextMessageAndIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gfgCCDDynamicProgressBarIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gfgCCDProgressBarHeadingText {
+  line-height: 1.4;
+  font-weight: bold;
+  text-align: center;
+}
+
+.gfgCCDProgressBarHeadingContainer {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  gap: 4px;
+}
+
+.gfgCCDProgressBarHeadingIcon {
+  height: var(--icon-size);
+  width: var(--icon-size);
+  svg {
+    path {
+      fill: var(--icon-color);
+    }
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .gfgCCDProgressBarWidget {
+    margin: 12px 0;
+    padding: 12px !important;
+  }
+  
+  .gfgCCDProgressBarSegmentHeader {
+    flex-wrap: wrap;
+  }
+  
+  .gfgDynamicTextMessageAndIconWrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+/*******************************************  PROGRESS BAR WIDGET -> END ****************************************/

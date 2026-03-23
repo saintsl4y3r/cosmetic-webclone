@@ -1,0 +1,662 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   Free Gift V2 — Storefront Widget Styles
+   All classes scoped under .gfgFGv2-* prefix.
+   Theming via CSS custom properties set dynamically by JS.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Widget Container ──────────────────────────────────────────────────── */
+
+.gfgFGv2-widget {
+  --fg-btn-bg: #1A1A1A;
+  --fg-btn-text: #fff;
+  --fg-border: #dedede;
+  --fg-title: #000;
+  --fg-subtitle: #777575;
+  --fg-box-bg: #f1f1f1;
+  --fg-highlight: #e53935;
+  --fg-progress: #4caf50;
+  --fg-tag-bg: #c62828;
+  --fg-strikethrough: #999;
+  --fg-dropdown-title: #000;
+  --fg-dropdown-icon: #000;
+  --fg-btn-border: #1A1A1A;
+  --fg-title-size: 16px;
+  --fg-subtitle-size: 13px;
+  --fg-btn-size: 15px;
+  --fg-tag-size: 10px;
+  --fg-dropdown-size: 16px;
+  --fg-body-title-size: 16px;
+  --fg-strikethrough-size: 12px;
+  --fg-title-weight: 600;
+  --fg-subtitle-weight: 600;
+  --fg-btn-weight: 600;
+  --fg-tag-weight: 700;
+  --fg-dropdown-weight: 600;
+  --fg-body-title-weight: 600;
+  --fg-strikethrough-weight: 400;
+  --fg-product-title: inherit;
+  --fg-border-radius: 8px;
+  --fg-widget-padding: 8px;
+
+  contain: layout style;
+  font-family: inherit;
+  box-sizing: border-box;
+  line-height: 1.2;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.gfgFGv2-widget *, .gfgFGv2-widget *::before, .gfgFGv2-widget *::after {
+  box-sizing: border-box;
+}
+
+/* ── Single Gift Card ──────────────────────────────────────────────────── */
+
+.gfgFGv2-single-card {
+  position: relative;
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-border-radius);
+  background: var(--fg-box-bg);
+  overflow: visible;
+}
+
+/* ── Multi Gift Widget ─────────────────────────────────────────────────── */
+
+.gfgFGv2-multi-widget {
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid var(--fg-border);
+  border-radius: var(--fg-border-radius);
+  overflow: hidden;
+}
+
+/* ── Dropdown Bar ──────────────────────────────────────────────────────── */
+
+.gfgFGv2-dropdown-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 14px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  background: var(--fg-box-bg);
+  transition: background 200ms ease;
+}
+
+.gfgFGv2-dropdown-bar:hover {
+  opacity: 0.85;
+}
+
+.gfgFGv2-dropdown-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.gfgFGv2-dropdown-title {
+  flex: 1;
+  font-size: var(--fg-dropdown-size);
+  font-weight: var(--fg-dropdown-weight);
+  color: var(--fg-dropdown-title);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Badge (unlocked count) ────────────────────────────────────────────── */
+
+.gfgFGv2-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background: var(--fg-highlight);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── Chevron ───────────────────────────────────────────────────────────── */
+
+.gfgFGv2-chevron-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transform: rotate(180deg);
+  transition: transform 300ms ease;
+  color: var(--fg-dropdown-icon);
+}
+
+.gfgFGv2-chevron-wrap.gfgFGv2-chevron-open {
+  transform: rotate(360deg);
+}
+
+.gfgFGv2-chevron {
+  display: block;
+}
+
+/* ── Dropdown Content (collapsible with animation) ─────────────────────── */
+
+.gfgFGv2-dropdown-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease-out;
+  border-bottom: 1px solid var(--fg-border);
+  background: var(--fg-box-bg);
+}
+
+.gfgFGv2-dropdown-content:not(.gfgFGv2-expanded) {
+  border-bottom: none;
+}
+
+.gfgFGv2-dropdown-content.gfgFGv2-expanded {
+  grid-template-rows: 1fr;
+}
+
+.gfgFGv2-dropdown-content .gfgFGv2-gift-row:first-child {
+  border-top: none;
+}
+
+.gfgFGv2-gifts-list {
+  min-height: 0;
+  max-height: 270px;
+  overflow: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+
+.gfgFGv2-gifts-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.gfgFGv2-gifts-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.gfgFGv2-gifts-list::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
+
+.gfgFGv2-gifts-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.35);
+}
+
+.gfgFGv2-expanded .gfgFGv2-gifts-list {
+  animation: gfgFGv2-enable-scroll 0s 300ms forwards;
+}
+
+@keyframes gfgFGv2-enable-scroll {
+  to { overflow-y: auto; }
+}
+
+/* ── Gift Row ──────────────────────────────────────────────────────────── */
+
+.gfgFGv2-gift-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: var(--fg-widget-padding);
+  border-top: 1px solid var(--fg-border);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.gfgFGv2-single-card .gfgFGv2-gift-row {
+  border-top: none;
+}
+
+/* Gift row stagger animation delays (applied in expanded dropdown) */
+.gfgFGv2-expanded .gfgFGv2-gift-row:nth-child(1) { transition-delay: 0ms; }
+.gfgFGv2-expanded .gfgFGv2-gift-row:nth-child(2) { transition-delay: 50ms; }
+.gfgFGv2-expanded .gfgFGv2-gift-row:nth-child(3) { transition-delay: 100ms; }
+.gfgFGv2-expanded .gfgFGv2-gift-row:nth-child(4) { transition-delay: 150ms; }
+.gfgFGv2-expanded .gfgFGv2-gift-row:nth-child(5) { transition-delay: 200ms; }
+.gfgFGv2-expanded .gfgFGv2-gift-row:nth-child(6) { transition-delay: 250ms; }
+
+/* Row state: disabled (numberOfFreeGifts limit reached) */
+.gfgFGv2-row-disabled {
+  opacity: 0.5;
+}
+
+/* Row state: out of stock (all variants OOS) */
+.gfgFGv2-row-out_of_stock {
+  opacity: 0.5;
+}
+
+.gfgFGv2-oos-label {
+  font-size: var(--fg-subtitle-size);
+  font-weight: 600;
+  color: var(--fg-strikethrough);
+  white-space: nowrap;
+}
+
+/* Disabled (OOS) options in variant dropdown */
+.gfgFGv2-variant-select option:disabled {
+  color: #999;
+  font-style: italic;
+}
+
+/* ── Image Wrapper ─────────────────────────────────────────────────────── */
+
+.gfgFGv2-img-wrap {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: visible;
+  background: var(--fg-box-bg);
+}
+
+.gfgFGv2-img-wrap .gfgFGv2-img {
+  border-radius: 6px;
+}
+
+.gfgFGv2-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Quantity Badge on Image ───────────────────────────────────────────── */
+
+.gfgFGv2-qty-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background: var(--fg-highlight);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  z-index: 1;
+}
+
+/* ── Placeholder Image ────────────────────────────────────────────────── */
+
+.gfgFGv2-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: var(--fg-box-bg);
+  color: var(--fg-strikethrough);
+}
+
+/* ── Info Area ─────────────────────────────────────────────────────────── */
+
+.gfgFGv2-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.gfgFGv2-title {
+  font-size: var(--fg-body-title-size);
+  font-weight: var(--fg-body-title-weight);
+  color: var(--fg-product-title, var(--fg-title));
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.2;
+}
+
+/* ── Price ──────────────────────────────────────────────────────────────── */
+
+.gfgFGv2-price {
+  font-size: var(--fg-subtitle-size);
+  line-height: 1.2;
+}
+
+.gfgFGv2-price-strike {
+  text-decoration: line-through;
+  color: var(--fg-strikethrough);
+  font-size: var(--fg-strikethrough-size);
+  font-weight: var(--fg-strikethrough-weight);
+  margin-right: 4px;
+}
+
+.gfgFGv2-price-free {
+  font-weight: 700;
+  color: var(--fg-highlight);
+}
+
+.gfgFGv2-price-discounted {
+  font-weight: 700;
+  color: var(--fg-progress);
+}
+
+/* ── Variant Selector ──────────────────────────────────────────────────── */
+
+.gfgFGv2-variant-select {
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  margin-top: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  border: 1px solid var(--fg-border);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--fg-title);
+  cursor: pointer;
+  appearance: auto;
+}
+
+/* ── Text Highlights & Links ──────────────────────────────────────────── */
+
+.gfgFGv2-text-highlight {
+  color: var(--fg-highlight);
+  font-weight: 700;
+}
+
+.gfgFGv2-text-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.gfgFGv2-text-link:hover {
+  opacity: 0.75;
+}
+
+/* ── Status Text ───────────────────────────────────────────────────────── */
+
+.gfgFGv2-status {
+  font-size: var(--fg-subtitle-size);
+  font-weight: var(--fg-subtitle-weight);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+
+.gfgFGv2-status-locked {
+  color: var(--fg-subtitle);
+}
+
+.gfgFGv2-status-met {
+  color: var(--fg-highlight);
+}
+
+/* ── Action Area ───────────────────────────────────────────────────────── */
+
+.gfgFGv2-action {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Progress Ring (SVG) ───────────────────────────────────────────────── */
+
+.gfgFGv2-progress-ring {
+  display: block;
+}
+
+.gfgFGv2-progress-circle {
+  transition: stroke-dashoffset 600ms ease;
+}
+
+/* ── Checkmark Icon ────────────────────────────────────────────────────── */
+
+.gfgFGv2-check-icon {
+  display: block;
+  animation: gfgFGv2-scaleIn 200ms ease forwards;
+}
+
+@keyframes gfgFGv2-scaleIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ── Shake animation (dropdown icon when gifts unlocked & collapsed) ──── */
+
+@keyframes gfgFGv2-shake {
+  0%, 10%, 100% { transform: rotate(0deg); }
+  1.5%  { transform: rotate(-12deg); }
+  3%    { transform: rotate(12deg); }
+  4.5%  { transform: rotate(-8deg); }
+  6%    { transform: rotate(8deg); }
+  7.5%  { transform: rotate(-4deg); }
+  9%    { transform: rotate(0deg); }
+}
+
+.gfgFGv2-icon-shake .gfgFGv2-dropdown-icon {
+  animation: gfgFGv2-shake 5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* ── Buttons ───────────────────────────────────────────────────────────── */
+
+.gfgFGv2-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  min-width: 75px;
+  font-size: var(--fg-btn-size);
+  font-weight: var(--fg-btn-weight);
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--fg-btn-border);
+  transition: opacity 150ms ease, transform 150ms ease;
+  white-space: nowrap;
+  line-height: 1.2;
+  font-family: inherit;
+}
+
+.gfgFGv2-btn:active {
+  transform: scale(0.97);
+}
+
+/* ADD button */
+.gfgFGv2-btn-add {
+  background: var(--fg-btn-bg);
+  color: var(--fg-btn-text);
+  border: none;
+}
+
+.gfgFGv2-btn-add:hover {
+  opacity: 0.85;
+}
+
+/* ADD button — outline style variant */
+.gfgFGv2-btn-add.gfgFGv2-btn-outline {
+  background: transparent;
+  color: var(--fg-btn-bg);
+  border: 1px solid var(--fg-btn-bg);
+}
+
+/* ADD button — secondary kind variant (respects solid style) */
+.gfgFGv2-btn-add.gfgFGv2-btn-secondary {
+  background: var(--fg-btn-bg);
+  color: var(--fg-btn-text);
+  border: none;
+}
+
+/* ADD button — secondary + outline combined */
+.gfgFGv2-btn-add.gfgFGv2-btn-secondary.gfgFGv2-btn-outline {
+  background: transparent;
+  color: var(--fg-btn-bg);
+  border: 1px solid var(--fg-btn-bg);
+}
+
+/* REMOVE button */
+.gfgFGv2-btn-remove {
+  background: transparent;
+  color: var(--fg-highlight);
+  border-color: var(--fg-highlight);
+}
+
+.gfgFGv2-btn-remove:hover {
+  opacity: 0.85;
+}
+
+/* REMOVE button — outline style variant */
+.gfgFGv2-btn-remove.gfgFGv2-btn-outline {
+  border: 1px solid var(--fg-highlight);
+}
+
+/* REMOVE button — secondary kind variant */
+.gfgFGv2-btn-remove.gfgFGv2-btn-secondary {
+  border: 1px solid var(--fg-btn-bg);
+  color: var(--fg-btn-bg);
+}
+
+/* Disabled button */
+.gfgFGv2-btn-disabled {
+  background: var(--fg-box-bg);
+  color: var(--fg-strikethrough);
+  border-color: var(--fg-border);
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* Loading button */
+.gfgFGv2-btn-loading {
+  background: var(--fg-box-bg);
+  color: var(--fg-subtitle);
+  border-color: var(--fg-border);
+  cursor: wait;
+  pointer-events: none;
+}
+
+/* Spinner inside loading button */
+.gfgFGv2-btn-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--fg-border);
+  border-top-color: var(--fg-highlight);
+  border-radius: 50%;
+  animation: gfgFGv2-spin 0.6s linear infinite;
+}
+
+@keyframes gfgFGv2-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Success button (green checkmark state after add) */
+.gfgFGv2-btn-success {
+  background: #4caf50;
+  color: #fff;
+  border-color: #4caf50;
+  cursor: default;
+  pointer-events: none;
+  padding: 3px 14px;
+  animation: gfgFGv2-successPop 400ms ease forwards;
+}
+
+@keyframes gfgFGv2-successPop {
+  0%   { transform: scale(0.85); opacity: 0.7; }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.gfgFGv2-btn-check {
+  display: block;
+}
+
+.gfgFGv2-btn-check path {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: gfgFGv2-checkDraw 400ms ease forwards 100ms;
+}
+
+@keyframes gfgFGv2-checkDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Exit animation (checkmark fading out) */
+.gfgFGv2-btn-exit {
+  animation: gfgFGv2-btnExit 300ms ease forwards;
+}
+
+@keyframes gfgFGv2-btnExit {
+  to { opacity: 0; transform: scale(0.85); }
+}
+
+/* Enter animation (remove button fading in) */
+.gfgFGv2-btn-enter {
+  animation: gfgFGv2-btnEnter 300ms ease forwards;
+}
+
+@keyframes gfgFGv2-btnEnter {
+  from { opacity: 0; transform: scale(0.85); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Confetti Lottie overlay */
+.gfgFGv2-confetti-lottie {
+  pointer-events: none;
+}
+
+/* ── Tag / Ribbon Flag ────────────────────────────────────────────────── */
+
+.gfgFGv2-tag-wrap {
+  position: absolute;
+  top: -5px;
+  right: 16px;
+  z-index: 2;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
+}
+
+/* Main flag body */
+.gfgFGv2-tag {
+  border-radius: 0 0 5px 5px;
+  display: block;
+  position: relative;
+  background: linear-gradient(90deg, var(--fg-tag-bg), var(--fg-tag-dark, var(--fg-tag-bg)));
+  color: #fff;
+  padding: 2px 12px;
+  font-size: var(--fg-tag-size);
+  font-weight: var(--fg-tag-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Left fold — 90° at bottom-right, hypotenuse from top to bottom */
+.gfgFGv2-tag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -6px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 5px 7px;
+  border-color: transparent transparent var(--fg-tag-fold, #7b1a1a) transparent;
+}
+
+/* Right fold — 90° at bottom-left, hypotenuse from top to bottom */
+.gfgFGv2-tag::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -6px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 7px 5px 0;
+  border-color: transparent transparent var(--fg-tag-fold, #7b1a1a) transparent;
+}
